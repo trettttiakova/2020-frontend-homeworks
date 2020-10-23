@@ -1,0 +1,282 @@
+body {
+    margin: 0;
+}
+
+@font-face {
+    font-family: "PT SansNarrow";
+    src: url("ptsansnarrow/sansnarrow.ttf");
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid lightgray;
+    background-color: white;
+}
+
+.header > .title {
+    font-family: PT SansNarrow;
+    font-size: 32px;
+    text-align: center;
+    margin: 0;
+}
+
+.header > .title::first-letter {
+    color: red;
+}
+
+.content {
+    top: 50px;
+    position: relative;
+    /* background-color: lightpink; */
+    height: calc(100vh - 160px);
+}
+
+.content > input[name="active-cat"] {
+    position: relative;
+    top: 32vw;
+    left: 39vw;
+    width: 1vw;
+    margin: 0.5vw;
+}
+
+.content > input[name="active-cat"]:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+.content > input[name="active-cat"]:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: red;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+.gallery {
+    margin-top: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 100%;
+    height: 25vw;
+}
+
+.cat {
+    display: inline-block;
+    height: 100%;
+    margin: 0 20px;
+    position: relative;
+}
+
+.cat > .picture {
+    height: 100%;
+}
+
+.cat > .picture > img {
+    height: 80%;
+    opacity: 0.7;
+    position: relative;
+    bottom: 10%;
+}
+
+input#cat1:checked ~ .gallery .cat1 .picture img,
+input#cat2:checked ~ .gallery .cat2 .picture img,
+input#cat3:checked ~ .gallery .cat3 .picture img,
+input#cat4:checked ~ .gallery .cat4 .picture img,
+input#cat5:checked ~ .gallery .cat5 .picture img,
+input#cat6:checked ~ .gallery .cat6 .picture img,
+input#cat7:checked ~ .gallery .cat7 .picture img,
+input#cat8:checked ~ .gallery .cat8 .picture img,
+input#cat9:checked ~ .gallery .cat9 .picture img,
+input#cat10:checked ~ .gallery .cat10 .picture img
+ {
+    height: 100%;
+    opacity: 1;
+    bottom: 0;
+}
+
+input#cat1:checked ~ .gallery .cat {
+    left: 33vw;
+}
+input#cat2:checked ~ .gallery .cat {
+    left: 8vw;
+}
+input#cat3:checked ~ .gallery .cat {
+    left: -15vw;
+}
+input#cat4:checked ~ .gallery .cat {
+    left: -40vw;
+}
+input#cat5:checked ~ .gallery .cat {
+    left: -62vw;
+}
+input#cat6:checked ~ .gallery .cat {
+    left: -90vw;
+}
+input#cat7:checked ~ .gallery .cat {
+    left: -113vw;
+}
+input#cat8:checked ~ .gallery .cat {
+    left: -136vw;
+}
+input#cat9:checked ~ .gallery .cat {
+    left: -160vw;
+}
+input#cat10:checked ~ .gallery .cat {
+    left: -185vw;
+}
+
+.cat > .hovered-name {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.cat .name {
+    color: white;
+    font-family: PT SansNarrow;
+    text-align: center;
+    padding-top: 10vw;
+}
+
+input#cat1:checked ~ .gallery .cat1:hover > .hovered-name,
+input#cat2:checked ~ .gallery .cat2:hover > .hovered-name,
+input#cat3:checked ~ .gallery .cat3:hover > .hovered-name,
+input#cat4:checked ~ .gallery .cat4:hover > .hovered-name,
+input#cat5:checked ~ .gallery .cat5:hover > .hovered-name,
+input#cat6:checked ~ .gallery .cat6:hover > .hovered-name,
+input#cat7:checked ~ .gallery .cat7:hover > .hovered-name,
+input#cat8:checked ~ .gallery .cat8:hover > .hovered-name,
+input#cat9:checked ~ .gallery .cat9:hover > .hovered-name,
+input#cat10:checked ~ .gallery .cat10:hover > .hovered-name {
+    display: block;
+}
+
+input[name="modal-cat"] {
+    display: none;
+}
+
+.modal,
+.modal1, .modal2, .modal3, .modal4, .modal5, 
+.modal6, .modal7, .modal8, .modal9, .modal10 {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    height: 100%
+}
+.modal .modal-content {
+    height: 70vh;
+    position: relative;
+    top: 5vh;
+    left: 15vw;
+    width: 70vw;
+    /* background-color: lightpink; */
+}
+.modal .modal-picture {
+    height: 100%;
+}
+/* .modal .modal-picture, .modal .modal-info {
+    display: inline-block;
+} */
+
+.modal .modal-picture img {
+    height: 100%;
+}
+
+/* .modal1 .modal-info, .modal6 .modal-info {
+    right: -10px;
+} */
+
+.modal-info {
+    color: white;
+    font-family: Arial;
+    width: 25vw;
+    font-size: 20px;
+    padding-left: 15px;
+    position: absolute;
+    right: 0;
+    top: 15vh;
+}
+
+.modal1 .modal-info, .modal6 .modal-info {
+    right: -10vw;
+}
+.modal9 .modal-info {
+    right: -5vw;
+}
+
+
+.modal-info h1 {
+    font-size: 32px;
+}
+.modal-content label {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+input[name="modal-cat"]#modal1:checked ~ .modal1,
+input[name="modal-cat"]#modal2:checked ~ .modal2,
+input[name="modal-cat"]#modal3:checked ~ .modal3,
+input[name="modal-cat"]#modal4:checked ~ .modal4,
+input[name="modal-cat"]#modal5:checked ~ .modal5,
+input[name="modal-cat"]#modal6:checked ~ .modal6, 
+input[name="modal-cat"]#modal7:checked ~ .modal7,
+input[name="modal-cat"]#modal8:checked ~ .modal8,
+input[name="modal-cat"]#modal9:checked ~ .modal9,
+input[name="modal-cat"]#modal10:checked ~ .modal10 {
+    display: block;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid lightgray;
+    width: 100%;
+    padding-left: 20px;
+    font-family: Arial;
+    font-size: 14px;
+    height: 110px;
+}
+.footer a {
+    color: #4c4cd8;
+    text-decoration: none;
+}
+.footer .textus {
+    color: gray;
+}
+.footer .email a:before {
+    content: '';
+    background-image: url('img/rsz_envelope.jpg');
+    width: 30px;
+    height: 20px;
+    padding-left: 30px;
+}
+
+.footer .copyright {
+    position: absolute;
+    right: 40px;
+    bottom: 0;
+}

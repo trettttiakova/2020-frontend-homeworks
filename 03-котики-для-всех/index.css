@@ -1,0 +1,323 @@
+/* базовые стили */
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+@font-face {
+    font-family: PT SansNarrow;
+    src: url("ptsansnarrow/sansnarrow.ttf");
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid lightgray;
+    background-color: white;
+}
+
+.header > .title {
+    font-family: PT SansNarrow;
+    font-size: 32px;
+    text-align: center;
+    margin: 0;
+}
+
+.header > .title::first-letter {
+    color: red;
+}
+
+.content > input[type="radio"] {
+    display: none;
+}
+
+.content .filter, .card .down-info {
+    display: none;
+}
+.content {
+    padding: 70px 15px 15px 15px;
+    min-height: calc(100vh - 130px);
+}
+.content .info .name {
+    font-size: 20px;
+}
+.card:hover {
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.content .cats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+.content .card {
+    border: 1px solid lightgray;
+    overflow: hidden;
+}
+.content .card .info {
+    padding: 10px;
+}
+.card .picture {
+    overflow: hidden;
+}
+.card .picture img {
+    width: 100%;
+}
+.footer {
+    border-top: 1px solid lightgray;
+    background-color: white;
+    font-size: 14px;
+    /* bottom: 0; */
+    width: 100%;
+}
+.footer .contact-us .email:before {
+    content: '';
+    background-image: url('img/rszmail.png');
+    padding-right: 25px;
+    background-repeat: no-repeat;
+}
+.footer a {
+    color: #4c4cd8;
+    text-decoration: none;
+}
+.footer .contact-us, .footer .copyright {
+    padding-left: 15px;
+}
+.footer .dot {
+    display: none;
+}
+.footer .copyright {
+    padding-top: 10px;
+}
+.footer .contact-us p {
+    margin: 5px;
+}
+
+/* для планшетов */
+@media screen and (min-width: 730px) and (max-width: 1199px){
+    .content .cats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .content .card {
+        height: 400px;
+        grid-template-rows: 1fr 1fr;
+    }
+    .card .picture {
+        height: 200px;
+        overflow: hidden;
+    }
+    .card .picture img {
+        width: 100%;
+        min-height: 200px;
+    }
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 10px 0;
+    }
+    .footer .contact-us {
+        display: block;
+    }
+    .footer .copyright {
+        padding-right: 15px;
+    }
+}
+
+/* для десктопов */
+@media screen and (min-width: 1200px) {
+    .content .filter, .card .down-info {
+        display: block;
+    }
+    .content {
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+    }
+    .content .cats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: min-content;
+        gap: 15px;
+    }
+    .content .card {
+        overflow: hidden;
+    }
+    .card .upper-info {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 10px;
+        border-bottom: 1px solid lightgray;
+    }
+    .card .picture {
+        height: 250px;
+        width: 100%;
+        overflow: hidden;
+    }
+    .card .picture img {
+        min-height: 100%;
+        
+    }
+    .card .upper-info, .card .down-info {
+        padding: 10px;
+    }
+    .content > input[type="radio"] {
+        display: none;
+    }
+    .filter {
+        padding: 0 15px;
+        position: fixed;
+        right: 10px;
+        width: calc(20% - 30px);
+    }
+    
+    .filter .labels {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .filter .label {
+        line-height: 50px;
+        background-color: rgb(233, 233, 233);
+        margin: 5px 0;
+        padding-left: 15px;
+        border-radius: 15px;
+        border: 2px solid white;
+    }
+    
+    .filter .label:hover {
+        background-color: rgb(223, 232, 238);
+    }
+    
+    .filter .label:active {
+        border-color: rgb(202, 229, 245);
+    }
+
+    .filter .filter-title {
+        font-size: 20px;
+    }
+    
+    .age-input {
+        width: 100%;
+        margin: 7.55px 0;
+        background-color: transparent;
+        -webkit-appearance: none;
+    }
+    .age-input:focus {
+        outline: none;
+    }
+    .age-input::-webkit-slider-runnable-track {
+        background: #3071a9;
+        border: 0;
+        width: 100%;
+        height: 0.9px;
+        cursor: pointer;
+    }
+    .age-input::-webkit-slider-thumb {
+        margin-top: -7.55px;
+        width: 16px;
+        height: 16px;
+        background: #ffffff;
+        border: 0.1px solid #000000;
+        border-radius: 50px;
+        cursor: pointer;
+        -webkit-appearance: none;
+    }
+    .age-input::-moz-range-track {
+        background: #3071a9;
+        border: 0;
+        width: 100%;
+        height: 1px;
+        cursor: pointer;
+    }
+    .age-input::-moz-range-thumb {
+        width: 16px;
+        height: 16px;
+        background: #ffffff;
+        border: 0.1px solid #000000;
+        border-radius: 50px;
+        cursor: pointer;
+    }
+    .age-input::-ms-track {
+        background: transparent;
+        border-color: transparent;
+        border-width: 8.55px 0;
+        color: transparent;
+        width: 100%;
+        height: 0.9px;
+        cursor: pointer;
+    }
+    .age-input::-ms-fill-upper {
+        background: #3071a9;
+        border: 0;
+    }
+    .age-input::-ms-thumb {
+        width: 16px;
+        height: 16px;
+        background: #ffffff;
+        border: 0.1px solid #000000;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-top: 0px;
+    }
+    
+    input[type="radio"]#default:checked ~ .filter label[for="default"],
+    input[type="radio"]#no:checked ~ .filter label[for="no"],
+    input[type="radio"]#maine:checked ~ .filter label[for="maine"],
+    input[type="radio"]#british:checked ~ .filter label[for="british"] {
+        background-color: rgb(202, 229, 245);
+    }
+    
+    input[type="radio"]#default:checked ~ .cats .card {
+        display: block;
+    }
+    
+    input[type="radio"]#no:checked ~ .cats .card {
+        display: none;
+    }
+    input[type="radio"]#no:checked ~ .cats .card.no {
+        display: block;
+    }
+    
+    input[type="radio"]#maine:checked ~ .cats .card {
+        display: none;
+    }
+    input[type="radio"]#maine:checked ~ .cats .card.maine {
+        display: block;
+    }
+    
+    input[type="radio"]#british:checked ~ .cats .card {
+        display: none;
+    }
+    input[type="radio"]#british:checked ~ .cats .card.british {
+        display: block;
+    }
+    .footer .contact-us .email:before {
+        background: none;
+        padding-right: 0;
+    }
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 45px;
+    }
+    .footer .contact-us {
+        display: flex;
+        width: 30%;
+        justify-content: space-between;
+    }
+    .footer .contact-us .title:before {
+        content: '';
+        background-image: url('img/rszmail.png');
+        padding-right: 25px;
+        background-repeat: no-repeat;
+    }
+    .footer .dot {
+        display: block;
+    }
+    .footer .copyright {
+        padding-top: 0;
+        padding-right: 15px;
+    }
+}

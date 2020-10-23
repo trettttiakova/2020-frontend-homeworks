@@ -1,0 +1,174 @@
+@font-face {
+    font-family: "Dancing";
+    src: url("fonts/DancingScript-Bold.ttf");
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    /* background-color: rgb(230, 230, 230); */
+    background: rgb(235, 235, 235);
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(251, 114, 137);
+    font-weight: 900;
+    font-size: 1.7rem;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.header .gold {
+    color: gold;
+    font-family: "Dancing";
+    font-size: 2.3rem;
+}
+
+.tinder {
+    padding-top: 60px;
+}
+
+.tinder .pig-checkbox {
+    display: none;
+}
+
+.tinder .card {
+    position: relative;
+    border: 5px solid rgb(251, 114, 137);
+}
+
+.card .profile {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease-out;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+
+.card .profile .info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-left: 10px;
+    background: linear-gradient(transparent, 30%, white);;
+}
+
+.card .profile .picture img {
+    /* centering the image horizontally */
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.card .profile,
+.card .profile .picture,
+.card .profile .picture img {
+    height: 100%;
+}
+
+.buttons {
+    display: none;
+    font-size: 2.5rem;
+}
+
+.buttons .button {
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3rem;
+    background-color: rgb(248, 214, 219);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.05s ease-out;
+}
+
+.buttons .button:hover,
+.buttons .button:active {
+    background-color: rgb(236, 185, 192);
+}
+.buttons .button:active {
+    box-shadow: none;
+}
+
+@media (orientation: portrait) {
+    .tinder {
+        height: calc(100vh - 60px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .card {
+        max-height: 500px;
+        /* height: calc(100vw - 20px); */
+        height: 85vw;
+    }
+
+    .card, .buttons {
+        max-width: 500px;
+        /* width: calc(100vw - 20px); */
+        width: 85vw;
+        margin: 0 auto;
+    }
+    
+    .buttons {
+        justify-content: space-around;
+        align-items: center;
+        /* min-height: calc(100vh - 80vw - 60px); */
+    }
+}
+
+@media (orientation: landscape) {
+    .tinder {
+        height: calc(100vh - 70px);
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .card {
+        width: calc(100vh - 70px);
+        max-width: 500px;
+        overflow: hidden;
+    }
+    .buttons {
+        flex-direction: column-reverse;
+        justify-content: space-around;
+    }
+    .card, .buttons {
+        height: calc(100vh - 70px);
+        max-height: 500px;
+    }
+}
+
+/* Showing the next card mechanics */
+input#pig1:checked ~ .card .profile1,
+input#pig2:checked ~ .card .profile2,
+input#pig3:checked ~ .card .profile3,
+input#pig4:checked ~ .card .profile4,
+input#pig5:checked ~ .card .profile5,
+input#pig6:checked ~ .card .profile6,
+input#pig7:checked ~ .card .profile7,
+input#pig8:checked ~ .card .profile8 {
+    visibility: visible;
+    opacity: 1;
+}
+input#pig1:checked ~ .controls .buttons1,
+input#pig2:checked ~ .controls .buttons2,
+input#pig3:checked ~ .controls .buttons3,
+input#pig4:checked ~ .controls .buttons4,
+input#pig5:checked ~ .controls .buttons5,
+input#pig6:checked ~ .controls .buttons6,
+input#pig7:checked ~ .controls .buttons7,
+input#pig8:checked ~ .controls .buttons8 {
+    display: flex;
+}
