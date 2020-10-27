@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Яндекс мяу-шеф</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <article class="form-window">
+        <form class="form">
+            <h1 class="form__title">Яндекс мяу-шеф</h1>
+            <p class="form__information">
+                Закажи идеальное меню для твоего пушистого (или не очень) любимца!<br>
+                Мы пришлем запас ингредиентов на неделю с подробными рецептами – Вашему коту останется
+                только приготовить себе еду!
+            </p>
+            <p class="form__question">
+                <label>Моему котику 
+                    <input type="number" class="form__input form__input_number"> лет,
+                </label>
+                <label>а весит он 
+                    <input type="number" class="form__input form__input_number"> кг.
+                </label>
+            </p>
+            <p class="form__questions">
+                <select class="form__input form__input_select" aria-label="Цель питания для кота">
+                    <option value="Набор массы" selected>Набор массы</option>
+                    <option value="Поддержание веса">Поддержание веса</option>
+                    <option value="Похудение">Похудение</option>
+                </select>
+            </p>
+            <p class="form__question">
+                <input type="checkbox" id="cat-vegan" class="checkbox">
+                <label for="cat-vegan">Мой кот вегетарианец</label>
+            </p>
+            <p class="form__question">
+                <input type="email" placeholder="Email (Ваш, не котика)" class="form__input" 
+                    aria-label="Ваш электронный адрес">
+            </p>
+            <p class="form__question">
+                <input type="text" placeholder="Адрес (Ваш и котика)" class="form__input" 
+                    aria-label="Ваш адрес проживания - для доставки">
+            </p>
+            <button class="form__question form__input form__input_button" aria-label="Заказать">
+                Заказать
+            </button>
+        </form>
+        <section class="decoration">
+            <div class="decoration__image">
+                <img src="img/cat.png" alt="Cat and loving owner">
+            </div>
+        </section>
+        <section class="form-window__close">
+            <button class="close-button" aria-label="Закрыть окно">
+                <img src="img/close.png" alt="" role="presentation">
+            </button>
+        </section>
+    </article>
+</body>
+
+</html>
