@@ -1,0 +1,223 @@
+@font-face {
+    font-family: 'Ruslan Display';
+    src: url('fonts/RuslanDisplay-Regular.ttf');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: url('fonts/Raleway/static/Raleway-Medium.ttf');
+    font-weight: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: url('fonts/Raleway/static/Raleway-Bold.ttf');
+    font-weight: bold;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: url('fonts/Raleway/static/Raleway-Light.ttf');
+    font-weight: lighter;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: url('fonts/Oswald-Regular.ttf');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Russo';
+    src: url('fonts/RussoOne-Regular.ttf');
+    font-display: swap;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.header__title {
+    font-family: 'Ruslan Display', 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+.infoblock {
+    border: 2px solid black;
+    font-family: 'Raleway', sans-serif;
+}
+.infoblock_size_small {
+    width: 250px;
+}
+.infoblock_size_small {
+    width: 350px;
+}
+.infoblock__title {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+.infoblock__content {
+    padding: 0 10px 10px 10px;
+    text-align: justify;
+    font-weight: normal;
+}
+.checkbox {
+    display: none;
+}
+.text-label {
+    width: 50px;
+    height: 50px;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid white;
+}
+.text-sizing-label {
+    background-image: url('img/text-sizing.svg');
+    background-color: white;
+}
+.text-font-label {
+    background-image: url('img/reverse.png');
+}
+.text-color-label {
+    background-image: url('img/white.png');
+}
+.text-color-checkbox:checked ~ .header .text-color-label {
+    background-image: url('img/black.png');
+}
+.text-sizing-checkbox:checked ~ .header .text-sizing-label {
+    background-color: rgb(162, 200, 162);
+}
+.separation-block {
+    font-family: 'Oswald', serif;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.separation-block_borders {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.separation-block_theme_panorama {
+    background-image: url('img/moscow.jpeg');
+    background-size: cover;
+    height: 150px;
+}
+.short-info {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+.main {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 0 20px 20px 20px;
+    gap: 30px;
+}
+.post__content {
+    column-count: 2;
+    column-rule: 1px solid gray;
+    text-indent: 2em;
+    hyphens: manual;
+}
+.post__image {
+    width: 100%;
+    border-radius: 20px;
+    filter: grayscale(100%);
+}
+.post__title {
+    font-family: 'Russo', 'Times New Roman', Times, serif;
+}
+.post__title_secondary {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+.post__content::first-letter {
+    font-size: 1.5em;
+    font-family: 'Oswald', serif;
+}
+.post__img-description {
+    font-style: italic;
+    text-align: center;
+}
+.post__inner-title {
+    column-span: all;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    font-size: 1.5em;
+}
+.post__inner-title_style_fancy::first-letter {
+    font-family: 'Ruslan Display', 'Times New Roman', Times, serif;
+    font-size: 2em;
+}
+.post__important-text {
+    column-span: all;
+    text-align: left;
+}
+.post1 {
+    grid-column: span 2;
+    line-height: 1.5em;
+}
+.post2 {
+    grid-column: span 3;
+}
+.infoblock_margin_10 {
+    margin-bottom: 10px;
+}
+.text-sizing-checkbox:checked ~ .main .post,
+.text-sizing-checkbox:checked ~ .separation-block,
+.text-sizing-checkbox:checked ~ .header {
+    font-size: 1.2em;
+}
+.text-sizing-checkbox:checked ~ .main {
+    grid-template-columns: repeat(7, 1fr);
+}
+.text-sizing-checkbox:checked ~ .main .post3 {
+    grid-column: span 2;
+}
+.text-color-checkbox:checked ~ .main,
+.text-color-checkbox:checked ~ .header,
+.text-color-checkbox:checked ~ .separation-block {
+    background-color: black;
+    color: white;
+}
+.text-color-checkbox:checked ~ .header .infoblock,
+.text-color-checkbox:checked ~ .main .infoblock,
+.text-color-checkbox:checked ~ .separation-block_borders {
+    border-color: white;
+}
+.vertical-text {
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+.text-font-checkbox:checked ~ .header .header__title,
+.text-font-checkbox:checked ~ .header .infoblock,
+.text-font-checkbox:checked ~ .main .infoblock,
+.text-font-checkbox:checked ~ .separation-block,
+.text-font-checkbox:checked ~ .main .post__title,
+.text-font-checkbox:checked ~ .main .post__title_secondary,
+.text-font-checkbox:checked ~ .main .post__content::first-letter,
+.text-font-checkbox:checked ~ .main .post__inner-title_style_fancy::first-letter,
+.text-font-checkbox:checked ~ .main .post__content,
+.text-font-checkbox:checked ~ .main .post__inner-title_style_fancy
+ {
+    font-family: Arial;
+}
